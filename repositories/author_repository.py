@@ -9,3 +9,14 @@ def save(author):
     id = results[0]['id']
     author.id = id
     return author
+
+def select_all():
+    authors_list = []
+
+    sql = "SELECT * FROM authors"
+    results = run_sql(sql)
+    
+    for row in results:
+        author = Author(row['name'], row['id'])
+        authors_list.append(author)
+    return authors_list

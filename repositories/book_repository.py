@@ -9,3 +9,14 @@ def save(book):
     id = results[0]['id']
     book.id = id
     return book
+
+def select_all():
+    book_list = []
+
+    sql = "SELECT * FROM books"
+    results = run_sql(sql)
+    
+    for row in results:
+        book = Book(row['title'], row['genre'], row['id'])
+        book_list.append(book)
+    return book_list
