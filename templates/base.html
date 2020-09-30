@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="{{url_for('home') }}">Home</a></li>
+                <li> <a href="{{url_for('books.books')}}">Books</a></li>
+                <li> <a href="">New Books</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    {% block home %}
+    {% endblock home %}
+</body>
+</html>
